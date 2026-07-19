@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看見他們 · Between Us — 台灣的東南亞移工與移民</title>
+<meta name="description" content="八十七萬個名字，撐起台灣的工廠、漁船與長照。一份關於在台東南亞移工與移民的紀實指南。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Archivo:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141b26;--ink-soft:#2b3a4a;--paper:#f4efe4;--paper-2:#ece4d3;
+  --marigold:#d98a2b;--marigold-deep:#b56a15;--clay:#a8442f;--teal:#1f6b63;--mist:#8b96a3;
+  --line:rgba(20,27,38,.14);--line-light:rgba(244,239,228,.16);
+  --serif:'Noto Serif TC',serif;--sans:'Noto Sans TC',sans-serif;
+  --display:'Fraunces',Georgia,serif;--mono:'Archivo',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:300;line-height:1.75;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.narrow{max-width:720px;margin:0 auto;padding:0 28px}
+[data-lang="zh"] .en{display:none}
+[data-lang="en"] .zh{display:none}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(20,27,38,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-light)}
+.nav-in{max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-family:var(--display);font-size:20px;font-weight:600;color:var(--paper);text-decoration:none;white-space:nowrap;line-height:1.1}
+.brand small{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.22em;color:var(--marigold);display:block;text-transform:uppercase;margin-top:1px}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-links{display:flex;gap:26px;flex-wrap:wrap}
+.nav-links a{font-size:13.5px;color:#c3ccd6;text-decoration:none;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--marigold)}
+@media(max-width:820px){.nav-links{display:none}}
+.langtoggle{display:flex;border:1px solid var(--line-light);border-radius:20px;overflow:hidden;flex-shrink:0}
+.langtoggle button{background:transparent;border:none;color:#9aa5b1;font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.08em;padding:6px 12px;cursor:pointer;transition:.2s}
+.langtoggle button.on{background:var(--marigold);color:var(--ink)}
+
+header.hero{position:relative;border-bottom:1px solid var(--line-light);overflow:hidden}
+.hero-in{max-width:1000px;margin:0 auto;padding:14vh 28px 11vh;text-align:center;position:relative;z-index:2}
+.hero-eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--marigold);margin-bottom:30px}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.7rem,7vw,5.4rem);line-height:1.05;letter-spacing:-.01em;color:var(--paper);margin-bottom:26px}
+.hero h1 em{font-style:italic;color:var(--marigold)}
+.hero .zh-sub{font-family:var(--serif);font-weight:600;font-size:clamp(1.1rem,2.3vw,1.55rem);color:#d9d1c2;margin:0 auto 30px;line-height:1.6;max-width:36ch}
+.hero p.lead{font-size:16.5px;line-height:1.9;color:#c3ccd6;max-width:54ch;margin:0 auto;font-weight:300}
+.hero-glow{position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:120%;height:80%;background:radial-gradient(ellipse at center,rgba(217,138,43,.13),transparent 62%);pointer-events:none;z-index:1}
+
+.ribbon{background:var(--marigold);color:var(--ink)}
+.ribbon-in{max-width:1120px;margin:0 auto;padding:20px 28px;display:flex;gap:38px;flex-wrap:wrap;align-items:baseline;justify-content:center}
+.ribbon b{font-family:var(--display);font-weight:600;font-size:1.5rem}
+.ribbon span{font-size:13px}
+
+section{padding:clamp(64px,9vw,120px) 0}
+.sec-paper{background:var(--paper);color:var(--ink)}
+.sec-ink{background:var(--ink);color:var(--paper)}
+.kicker{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--marigold-deep);margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.sec-ink .kicker{color:var(--marigold)}
+.kicker::before{content:"";width:34px;height:2px;background:currentColor;display:inline-block}
+h2.sec-title{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.12;letter-spacing:-.01em;margin-bottom:24px;max-width:24ch}
+.sec-ink h2.sec-title{color:var(--paper)}
+.body-lg{font-size:17px;line-height:1.9;font-weight:300;max-width:64ch}
+.body-lg + .body-lg{margin-top:20px}
+.sec-paper .body-lg{color:#33404e}
+.pull{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2.3rem);line-height:1.5;color:var(--clay);max-width:26ch;margin:8px auto;text-align:center}
+.sec-ink .pull{color:var(--marigold)}
+
+.timeline{margin-top:48px;border-left:2px solid var(--marigold);padding-left:30px;display:flex;flex-direction:column;gap:34px;max-width:640px}
+.tl-item{position:relative}
+.tl-item::before{content:"";position:absolute;left:-38px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--marigold);box-shadow:0 0 0 4px var(--paper)}
+.tl-year{font-family:var(--mono);font-weight:800;font-size:13px;letter-spacing:.1em;color:var(--marigold-deep)}
+.tl-body{font-size:15px;line-height:1.7;margin-top:6px;color:#3a4653}
+
+.countries{display:flex;flex-direction:column;gap:2px;margin-top:52px;background:var(--line);border:1px solid var(--line)}
+.country{background:var(--paper);padding:clamp(28px,4vw,48px) clamp(24px,3.5vw,44px);display:grid;grid-template-columns:.8fr 1.6fr;gap:clamp(24px,4vw,52px)}
+@media(max-width:820px){.country{grid-template-columns:1fr;gap:20px}}
+.country .idcol{border-right:1px solid var(--line);padding-right:24px}
+@media(max-width:820px){.country .idcol{border-right:none;border-bottom:1px solid var(--line);padding-right:0;padding-bottom:20px}}
+.country .rank{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--marigold-deep);text-transform:uppercase}
+.country h3{font-family:var(--display);font-weight:600;font-size:clamp(2rem,3.6vw,2.7rem);color:var(--ink);line-height:1;margin:12px 0 4px}
+.country .native{font-family:var(--serif);color:var(--marigold-deep);font-size:16px;font-weight:600}
+.country .role{font-size:12px;font-family:var(--mono);letter-spacing:.03em;color:var(--teal);text-transform:uppercase;margin-top:14px;line-height:1.5}
+.country .stat{margin-top:20px}
+.country .stat .v{font-family:var(--display);font-weight:600;font-size:1.7rem;color:var(--ink);line-height:1}
+.country .stat .k{font-size:11.5px;color:#66707d;margin-top:3px;line-height:1.4}
+.country .prose p{font-size:15px;line-height:1.85;color:#3a4653;font-weight:300}
+.country .prose p + p{margin-top:14px}
+.country .prose strong{font-weight:700;color:var(--clay)}
+.culture-block{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:560px){.culture-block{grid-template-columns:1fr}}
+.cb{border-top:2px solid var(--marigold);padding-top:12px}
+.cb h5{font-family:var(--serif);font-weight:700;font-size:14px;color:var(--ink);margin-bottom:6px}
+.cb p{font-size:13px;line-height:1.7;color:#4a5661}
+.cb .term{font-family:var(--mono);font-size:11px;color:var(--marigold-deep);letter-spacing:.02em;display:block;margin-bottom:2px}
+
+.hard-list{margin-top:52px;display:flex;flex-direction:column;gap:2px;background:var(--line-light);border:1px solid var(--line-light)}
+.hard{background:var(--ink);padding:34px clamp(20px,3vw,40px);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+@media(max-width:640px){.hard{grid-template-columns:1fr;gap:12px}}
+.hard .no{font-family:var(--mono);font-weight:800;font-size:15px;color:var(--clay);letter-spacing:.1em;padding-top:5px}
+.hard h4{font-family:var(--serif);font-weight:700;font-size:1.28rem;color:var(--paper);margin-bottom:12px;line-height:1.4}
+.hard p{font-size:15px;line-height:1.8;color:#bdc6d1;font-weight:300;max-width:70ch}
+.hard .fact{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--marigold);border:1px solid rgba(217,138,43,.35);padding:5px 11px;border-radius:3px;margin-top:16px}
+.hard .fact a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.hard .fact b{color:var(--paper)}
+
+.about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(28px,5vw,64px);margin-top:40px;align-items:start}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:24px}}
+.about-mark{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(2.4rem,5vw,3.6rem);color:var(--marigold);line-height:1.1}
+.about-mark span{display:block;font-family:var(--mono);font-style:normal;font-size:12px;letter-spacing:.2em;color:#8b96a3;text-transform:uppercase;margin-top:14px}
+.about-body p{font-size:16px;line-height:1.9;color:#c8d0da;font-weight:300}
+.about-body p + p{margin-top:18px}
+.about-body strong{color:var(--paper);font-weight:500}
+
+.accept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+@media(max-width:820px){.accept-grid{grid-template-columns:1fr}}
+.accept{background:var(--paper);border:1px solid var(--line);padding:28px 26px}
+.accept .n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--marigold-deep);font-weight:800;text-transform:uppercase}
+.accept h4{font-family:var(--serif);font-weight:700;font-size:1.22rem;color:var(--ink);margin:12px 0 10px;line-height:1.4}
+.accept p{font-size:14.5px;color:#3a4653;line-height:1.75;font-weight:300}
+
+.tool-band{background:linear-gradient(135deg,var(--marigold-deep),var(--clay));color:var(--paper);border-radius:3px;padding:clamp(36px,5vw,60px);margin-top:56px;text-align:center}
+.tool-band h3{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.2;margin-bottom:16px;color:#fff}
+.tool-band p{font-size:16px;color:#fbeede;max-width:56ch;margin:0 auto 28px;line-height:1.8;font-weight:300}
+.tool-btn{display:inline-flex;align-items:center;gap:10px;background:var(--paper);color:var(--ink);font-family:var(--mono);font-weight:800;font-size:14px;letter-spacing:.03em;padding:15px 30px;border-radius:3px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.tool-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+
+.sources{background:var(--ink);border-top:1px solid var(--line-light);padding:64px 0 30px}
+.sources h4{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--marigold);margin-bottom:22px}
+.src-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 40px;max-width:900px}
+@media(max-width:700px){.src-grid{grid-template-columns:1fr}}
+.src-grid a{font-size:13px;color:#aeb8c3;text-decoration:none;line-height:1.7;padding:3px 0;transition:color .2s}
+.src-grid a:hover{color:var(--marigold)}
+.src-grid a span.tag{font-family:var(--mono);font-size:10px;color:var(--mist);margin-right:8px}
+footer .foot-btm{border-top:1px solid var(--line-light);margin-top:44px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--mist)}
+footer .foot-btm .brand2{font-family:var(--display);font-size:18px;color:var(--paper)}
+.disclaimer{font-size:12px;color:var(--mist);line-height:1.7;max-width:74ch;margin-top:14px;font-weight:300}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="brand"><span class="zh">看見他們</span><span class="en">Between Us</span><small>Between&nbsp;Us · TW</small></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#origin"><span class="zh">從哪裡來</span><span class="en">Origins</span></a>
+        <a href="#who"><span class="zh">四個國家</span><span class="en">Four Nations</span></a>
+        <a href="#hardship"><span class="zh">結構困境</span><span class="en">Structures</span></a>
+        <a href="#about"><span class="zh">關於</span><span class="en">About</span></a>
+        <a href="#sources"><span class="zh">來源</span><span class="en">Sources</span></a>
+      </div>
+      <div class="langtoggle"><button data-set="zh" class="on">中</button><button data-set="en">EN</button></div>
+    </div>
+  </div>
+</nav>
+
+<a id="top"></a>
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-in">
+    <div class="hero-eyebrow reveal">A documentary guide · 紀實指南</div>
+    <h1 class="reveal"><span class="zh">八十七萬個名字，<br><em>撐起</em>台灣</span><span class="en">873,347 names<br>hold up <em>Taiwan</em></span></h1>
+    <div class="zh-sub reveal"><span class="zh">在工廠、在漁船、在無數家庭的客廳裡，他們照顧著我們的長輩、生產著我們的日常——卻常常沒有被真正看見。</span><span class="en">In factories, on fishing boats, in the living rooms of countless families — they care for our elders and make daily life possible, yet are rarely truly seen.</span></div>
+    <p class="lead reveal"><span class="zh">這是一份關於在台東南亞移工與移民的紀實指南。不是憐憫，也不是口號——只是把真實的數字、真實的文化、真實的處境，好好地攤開來，讓我們重新認識每天擦身而過的鄰居。</span><span class="en">A documentary guide to Southeast Asian migrant workers and immigrants in Taiwan. Not pity, not slogans — just the real numbers, cultures, and conditions laid out plainly, so we can see the neighbours we pass every day.</span></p>
+  </div>
+</header>
+
+<div class="ribbon">
+  <div class="ribbon-in">
+    <div><b>873,347</b> <span class="zh">在台合法移工（2026/3，勞動部）</span><span class="en">migrant workers (Mar 2026, MOL)</span></div>
+    <div><b>~5%</b> <span class="zh">佔台灣常住人口</span><span class="en">of Taiwan's resident population</span></div>
+    <div><b>4</b> <span class="zh">主要來源國</span><span class="en">countries of origin</span></div>
+  </div>
+</div>
+
+<section class="sec-paper" id="origin">
+  <div class="narrow">
+    <div class="kicker reveal"><span class="zh">從哪裡來</span><span class="en">How it began</span></div>
+    <h2 class="sec-title reveal"><span class="zh">這不是一段短暫的過客史，而是三十年來的社會支柱。</span><span class="en">Not a brief chapter of passers-by, but three decades as a pillar of society.</span></h2>
+    <p class="body-lg reveal"><span class="zh">1989 年，為了因應經濟起飛帶來的勞動力短缺，台灣正式向藍領外籍勞工開啟大門。當初被設想為「暫時性」的客工制度，三十多年後，早已成為台灣社會深層而永久的一部分。</span><span class="en">In 1989, facing labour shortages from its economic boom, Taiwan formally opened its doors to blue-collar foreign workers. What was designed as a "temporary" guest-worker system has, three decades on, become a deep and permanent part of Taiwanese society.</span></p>
+    <p class="body-lg reveal"><span class="zh">從國道工程到今日的高科技廠房，從工廠產線到照顧失能長輩的家庭客廳——他們的勞動，早已編織進台灣人日常生活的每一個角落。然而，貢獻愈深，制度性的困境卻始終存在。</span><span class="en">From national highways to today's high-tech factories, from production lines to the living rooms where they care for frail elders — their labour is woven into every corner of daily life. Yet the deeper the contribution, the more persistent the structural barriers.</span></p>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-year">1989</div><div class="tl-body"><span class="zh">台灣開放引進藍領外籍勞工，以補足重大公共工程與製造業的人力缺口。</span><span class="en">Taiwan begins importing blue-collar foreign labour to fill gaps in major public works and manufacturing.</span></div></div>
+      <div class="tl-item reveal"><div class="tl-year">1999</div><div class="tl-body"><span class="zh">「家事服務業」被正式排除於《勞動基準法》之外——家庭看護工與幫傭至今仍不受工時與例假的法定保障。</span><span class="en">Domestic service is excluded from the Labor Standards Act — home caregivers still lack legal protection on hours and rest days.</span></div></div>
+      <div class="tl-item reveal"><div class="tl-year">2022</div><div class="tl-body"><span class="zh">《勞工職業災害保險及保護法》上路，家事與產業移工均納入強制職災保險，是遲來的一步。</span><span class="en">The Occupational Accident Insurance Act finally brings both domestic and industrial migrants under mandatory coverage — a long-overdue step.</span></div></div>
+      <div class="tl-item reveal"><div class="tl-year">2025–26</div><div class="tl-body"><span class="zh">每兩年一度的移工大遊行，訴求從「自由轉換雇主」延伸到「廢除藍領移工 12–14 年的工作年限」。</span><span class="en">The biennial migrant march expands its demands from "freedom to change employers" to "abolishing the 12–14 year work-tenure cap."</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-ink" style="padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(56px,7vw,90px)">
+  <div class="narrow"><p class="pull reveal"><span class="zh">「他們不是勞動力的數字，是別人的女兒、丈夫、父親。」</span><span class="en">"They are not units of labour. They are someone's daughter, husband, father."</span></p></div>
+</section>
+
+<section class="sec-paper" id="who">
+  <div class="wrap">
+    <div class="kicker reveal"><span class="zh">四個國家</span><span class="en">Four nations</span></div>
+    <h2 class="sec-title reveal"><span class="zh">他們來自哪裡，帶來什麼樣的文化。</span><span class="en">Where they come from, and the cultures they carry.</span></h2>
+    <p class="body-lg reveal"><span class="zh">印尼、越南、菲律賓、泰國——四國移工各自承擔著台灣不同的支柱，也各自帶來一整個世界的節慶、信仰、藝術與味道。以下的產業分布來自勞動部的實際統計；文化的部分，是理解他們最溫柔的入口。</span><span class="en">Indonesia, Vietnam, the Philippines, Thailand — each carries a different pillar of Taiwan, and each brings a whole world of festivals, faith, art and flavour. The labour figures come from Ministry of Labor statistics; the culture is the gentlest way in.</span></p>
+
+    <div class="countries">
+
+      <article class="country reveal">
+        <div class="idcol">
+          <div class="rank"><span class="zh">最大來源國</span><span class="en">Largest source</span></div>
+          <h3>印尼</h3><div class="native">Indonesia</div>
+          <div class="role"><span class="zh">社福照護主力</span><span class="en">Backbone of home care</span></div>
+          <div class="stat"><div class="v">31.7<span style="font-size:.55em">萬</span></div><div class="k"><span class="zh">在台人數・約 37%（2025/8）</span><span class="en">~317,000 · ~37% (Aug 2025)</span></div></div>
+        </div>
+        <div class="prose">
+          <p><span class="zh">印尼籍移工是台灣無數家庭「隱形的家人」，扛起了大部分的家庭看護與居家照顧。他們照料著我們的長輩，自己卻因家事服務被排除於勞基法之外，成為工時最長、最容易陷入孤立的一群。</span><span class="en">Indonesian workers are the "invisible family" in countless Taiwanese homes, shouldering most of the country's home caregiving. They tend to our elders while, as domestic workers excluded from the Labor Standards Act, enduring the longest hours and deepest isolation.</span></p>
+          <p><span class="zh">印尼是全世界擁有最多島嶼、最多語言的國家之一——超過一萬七千座島、三百多個民族。這樣的多元，也讓他們帶著一種與生俱來的包容。</span><span class="en">Indonesia is one of Earth's most diverse nations — over 17,000 islands and 300+ ethnic groups — and its people carry that pluralism as second nature.</span></p>
+          <div class="culture-block">
+            <div class="cb"><h5><span class="term">Gotong Royong</span><span class="zh">互助共好</span><span class="en">Mutual aid</span></h5><p><span class="zh">整個社群無私分攤勞動、共扛重擔的精神，深植於印尼的村落文化。</span><span class="en">A village ethic where the whole community shares labour and lifts heavy burdens together.</span></p></div>
+            <div class="cb"><h5><span class="term">Lebaran / Eid</span><span class="zh">開齋節</span><span class="en">End of Ramadan</span></h5><p><span class="zh">齋戒月結束的團圓大節，人們聚在一起禱告、分享薑黃飯與家鄉味。</span><span class="en">The great reunion ending the fasting month — prayer, turmeric rice, the tastes of home.</span></p></div>
+            <div class="cb"><h5><span class="term">Batik</span><span class="zh">蠟染</span><span class="en">Wax-resist textile</span></h5><p><span class="zh">被聯合國列為人類非物質文化遺產的蠟染布藝，每一道紋樣都有故事。</span><span class="en">A UNESCO-recognised craft; every pattern in the dyed cloth tells a story.</span></p></div>
+            <div class="cb"><h5><span class="term">Angklung</span><span class="zh">竹樂</span><span class="en">Bamboo music</span></h5><p><span class="zh">每人搖出一個音、必須完美合作才能成曲的竹製樂器——像極了他們的社群哲學。</span><span class="en">A bamboo instrument where each shakes a single note; a melody emerges only through cooperation.</span></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="country reveal">
+        <div class="idcol">
+          <div class="rank"><span class="zh">第二大來源國</span><span class="en">Second largest</span></div>
+          <h3>越南</h3><div class="native">Việt Nam</div>
+          <div class="role"><span class="zh">製造・漁業・最大婚姻移民</span><span class="en">Manufacturing · fishing · spouses</span></div>
+          <div class="stat"><div class="v">29.2<span style="font-size:.55em">萬</span></div><div class="k"><span class="zh">在台人數・約 34%（2025/8）</span><span class="en">~292,000 · ~34% (Aug 2025)</span></div></div>
+        </div>
+        <div class="prose">
+          <p><span class="zh">越南籍移工是傳統製造業與漁業的絕對主力，也是在台<strong>最大的跨國婚姻族群</strong>——許多台灣家庭的第二代，身上流著越南的血。然而，越南移工來台前往往背負最高額的仲介費債務，這份沉重的財務壓力，讓他們在面對惡劣環境時更難以脫身。</span><span class="en">Vietnamese workers are the mainstay of manufacturing and fishing, and form Taiwan's <strong>largest group of cross-border spouses</strong> — the blood of a whole second generation. Yet they often arrive carrying the heaviest broker-fee debt, a weight that makes it hardest to walk away from bad conditions.</span></p>
+          <p><span class="zh">越南的文化底蘊，交織著儒家的孝道、佛教的慈悲，與一段法國殖民留下的藝術印記——連他們的咖啡與麵包，都帶著這種混血的優雅。</span><span class="en">Vietnamese culture braids Confucian filial piety, Buddhist compassion, and the imprint of French colonial history — an elegance that lingers even in their coffee and bread.</span></p>
+          <div class="culture-block">
+            <div class="cb"><h5><span class="term">Tết</span><span class="zh">農曆新年</span><span class="en">Lunar New Year</span></h5><p><span class="zh">一年中最重要的節日，全家團圓、打掃迎新、吃方形的粽子 Bánh chưng。</span><span class="en">The most important holiday: reunion, cleaning the home, square mung-bean rice cakes.</span></p></div>
+            <div class="cb"><h5><span class="term">Áo Dài</span><span class="zh">國服</span><span class="en">National dress</span></h5><p><span class="zh">修長開衩的絲質長衫配上飄逸長褲，是越南優雅與文化驕傲的象徵。</span><span class="en">The long side-split silk tunic over flowing trousers — a symbol of grace and pride.</span></p></div>
+            <div class="cb"><h5><span class="term">Thờ cúng tổ tiên</span><span class="zh">祖先崇拜</span><span class="en">Ancestor worship</span></h5><p><span class="zh">幾乎每個越南家庭的客廳都有一座祖先牌位，逢年過節上香獻果。</span><span class="en">Almost every Vietnamese living room holds an ancestral altar, honoured with incense and fruit.</span></p></div>
+            <div class="cb"><h5><span class="term">Múa rối nước</span><span class="zh">水上木偶戲</span><span class="en">Water puppetry</span></h5><p><span class="zh">起源於紅河三角洲、已有近千年歷史，藝人站在水中操偶。</span><span class="en">A near-thousand-year-old art from the Red River Delta, performed waist-deep in water.</span></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="country reveal">
+        <div class="idcol">
+          <div class="rank"><span class="zh">英語優勢</span><span class="en">English-speaking</span></div>
+          <h3>菲律賓</h3><div class="native">Pilipinas</div>
+          <div class="role"><span class="zh">電子業・機構看護</span><span class="en">Electronics · institutional care</span></div>
+          <div class="stat"><div class="v"><span class="zh">高教育</span><span class="en">Educated</span></div><div class="k"><span class="zh">四國中平均教育程度最高</span><span class="en">Highest average education of the four</span></div></div>
+        </div>
+        <div class="prose">
+          <p><span class="zh">受惠於高普及率的英語能力，菲律賓移工較多分布於高科技電子零組件業與機構看護。他們普遍開朗、自信、適應力強，卻仍常面臨嚴格的宿舍門禁與行政扣款。</span><span class="en">Thanks to widespread English, Filipino workers cluster in high-tech electronics and institutional care. Warm, confident and adaptable, they still often face strict dormitory curfews and administrative deductions.</span></p>
+          <p><span class="zh">三百多年的西班牙統治與數十年的美國治理，讓菲律賓成為東南亞天主教信仰最深的國家，也造就了他們聞名世界的熱情好客與韌性。</span><span class="en">Three centuries of Spanish rule and decades of American governance made the Philippines the most deeply Catholic nation in Southeast Asia — and gave it a hospitality and resilience the world knows.</span></p>
+          <div class="culture-block">
+            <div class="cb"><h5><span class="term">Bayanihan</span><span class="zh">社區共擔</span><span class="en">Communal unity</span></h5><p><span class="zh">最經典的畫面：整個村莊一起把鄰居的房子扛在肩上搬走。</span><span class="en">The iconic image: a whole village carrying a neighbour's house on their shoulders.</span></p></div>
+            <div class="cb"><h5><span class="term">Mano Po</span><span class="zh">敬長禮</span><span class="en">Blessing of elders</span></h5><p><span class="zh">晚輩輕輕握起長輩的手，貼上自己的額頭，領受祝福。</span><span class="en">A younger person presses an elder's hand to their forehead to receive a blessing.</span></p></div>
+            <div class="cb"><h5><span class="term">Sinulog</span><span class="zh">節慶</span><span class="en">Street festival</span></h5><p><span class="zh">宿霧每年一月的盛大慶典，用韻律的街舞向聖嬰致敬。</span><span class="en">Cebu's grand January celebration, honouring the Santo Niño with street dance.</span></p></div>
+            <div class="cb"><h5><span class="term">Tinikling</span><span class="zh">竹竿舞</span><span class="en">Bamboo dance</span></h5><p><span class="zh">舞者在快速拍打的竹竿間靈巧穿梭，模仿田間鳥兒躲避陷阱。</span><span class="en">Dancers step nimbly between clapping bamboo poles, mimicking birds dodging traps.</span></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="country reveal">
+        <div class="idcol">
+          <div class="rank"><span class="zh">營造傳統主力</span><span class="en">Construction mainstay</span></div>
+          <h3>泰國</h3><div class="native">ประเทศไทย</div>
+          <div class="role"><span class="zh">營造業・重工業</span><span class="en">Construction · heavy industry</span></div>
+          <div class="stat"><div class="v"><span class="zh">營造</span><span class="en">Builders</span></div><div class="k"><span class="zh">從國道到高科技廠房的興建</span><span class="en">From highways to high-tech plants</span></div></div>
+        </div>
+        <div class="prose">
+          <p><span class="zh">從 1990 年代的國道建設，到今日高科技廠房的興建，泰國移工始終是台灣營造與重工業的主力部隊。他們承擔著最粗重、最危險的工作，常常在語言隔閡中，難以及時取得工安資訊與醫療協助。</span><span class="en">From the highways of the 1990s to today's high-tech plants, Thai workers have long been the mainstay of construction and heavy industry — taking on the heaviest, most dangerous work, often cut off by language from safety information and medical help.</span></p>
+          <p><span class="zh">泰國是東南亞唯一未曾被殖民的國家，上座部佛教深深形塑了他們平和、尊重、從容的生活哲學——那份「Mai Pen Rai（沒關係）」的豁達，是一種面對困境的溫柔力量。</span><span class="en">Thailand is the only never-colonised nation in Southeast Asia, and Theravada Buddhism shapes a calm, respectful way of life — the easygoing spirit of "Mai Pen Rai" (never mind) is a gentle strength in the face of hardship.</span></p>
+          <div class="culture-block">
+            <div class="cb"><h5><span class="term">Songkran</span><span class="zh">潑水節</span><span class="en">Water festival</span></h5><p><span class="zh">泰國新年的歡樂潑水，象徵洗去過去一年的不順，也向長輩表達敬意。</span><span class="en">The joyful new-year water fights wash away misfortune and honour one's elders.</span></p></div>
+            <div class="cb"><h5><span class="term">Loy Krathong</span><span class="zh">水燈節</span><span class="en">Festival of lights</span></h5><p><span class="zh">每年十一月，把燭光小舟放入水中，感謝水神、放下負面的念頭。</span><span class="en">Each November, candle-lit baskets float down the water in thanks and release.</span></p></div>
+            <div class="cb"><h5><span class="term">Wai</span><span class="zh">合十禮</span><span class="en">The Wai greeting</span></h5><p><span class="zh">雙掌合十、微微鞠躬，手的高度隨著對方的身分而變——一種深刻的尊重文化。</span><span class="en">Palms together, a slight bow; the hands' height shifts with the respect owed.</span></p></div>
+            <div class="cb"><h5><span class="term">Nuad Thai</span><span class="zh">泰式按摩</span><span class="en">Thai massage</span></h5><p><span class="zh">被聯合國列為非物質文化遺產的傳統療法，結合伸展與指壓。</span><span class="en">A UNESCO-listed healing tradition blending assisted stretching and pressure-point work.</span></p></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec-ink" id="hardship">
+  <div class="wrap">
+    <div class="kicker reveal"><span class="zh">結構困境</span><span class="en">The structures they navigate</span></div>
+    <h2 class="sec-title reveal"><span class="zh">問題不在他們身上，而在制度的設計裡。</span><span class="en">The problem isn't them. It's how the system is designed.</span></h2>
+    <p class="body-lg reveal" style="color:#c3ccd6"><span class="zh">要真正接納一個群體，得先誠實看見他們承受了什麼。以下每一項，都不是個人的不幸，而是制度性的縫隙——而縫隙，是可以被縫補的。</span><span class="en">To truly accept a community, we must first honestly see what it endures. None of the following is personal misfortune — each is a structural gap. And gaps can be closed.</span></p>
+    <div class="hard-list">
+      <div class="hard reveal"><div class="no">01</div><div>
+        <h4><span class="zh">家事移工，被排除在《勞動基準法》之外</span><span class="en">Domestic workers, excluded from the Labor Standards Act</span></h4>
+        <p><span class="zh">自 1999 年起，家庭看護工與幫傭被正式排除於勞基法之外，至今未變。這意味著他們沒有法定工時上限、沒有法定例假保障。許多住宿型的看護，一天工作 10 到 14 小時以上，全年幾乎無休。</span><span class="en">Since 1999, home caregivers and helpers have been excluded from the Labor Standards Act — with no legal cap on hours and no guaranteed rest days. Many live-in caregivers work 10 to 14+ hours a day, nearly year-round.</span></p>
+        <span class="fact"><span class="zh">曾有調查指出，約 <b>68%</b> 家庭看護移工「從來沒放過假」</span><span class="en">One survey found ~<b>68%</b> of home caregivers "have never had a day off"</span> · <a href="https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=6590&pid=171808" target="_blank" rel="noopener"><span class="zh">立法院研析</span><span class="en">Legislative Yuan</span></a></span>
+      </div></div>
+      <div class="hard reveal"><div class="no">02</div><div>
+        <h4><span class="zh">仲介費與債務枷鎖</span><span class="en">Broker fees and the chains of debt</span></h4>
+        <p><span class="zh">許多移工在來台之前，必須先向母國仲介借貸、支付高額的仲介與招募費用。他們在台灣的頭幾年，往往把大部分薪水都用來償還這筆債務。這條枷鎖，讓他們在遭遇欠薪或虐待時，更難以開口、更難以離開。</span><span class="en">Many workers must borrow to pay steep broker and recruitment fees before they even arrive. Their first years in Taiwan often go entirely to repaying that debt — a chain that makes it far harder to speak up, or leave, when facing unpaid wages or abuse.</span></p>
+        <span class="fact"><span class="zh">越南移工來台，招募費用一度高達每人約 <b>19 萬元</b></span><span class="en">Recruitment costs for Vietnamese workers once reached ~<b>NT$190,000</b> each</span> · <a href="https://join.gov.tw/idea/detail/8ab15f6a-57e6-447c-bd58-c1b06903527d" target="_blank" rel="noopener"><span class="zh">公共政策平臺</span><span class="en">Public policy platform</span></a></span>
+      </div></div>
+      <div class="hard reveal"><div class="no">03</div><div>
+        <h4><span class="zh">離開雇主，就失去一切</span><span class="en">Leave your employer, and lose everything</span></h4>
+        <p><span class="zh">官方統計中有數萬名「行蹤不明」的移工。但絕大多數人離開原雇主，並不是為了違法，而是為了逃離虐待、欠薪或不法扣款。問題在於：一旦離開雇主，合法居留身分立即被取消——連健保與法律救濟都一併被切斷。</span><span class="en">Official figures count tens of thousands of "missing" workers. But most leave not to break the law — they flee abuse, withheld wages, or illegal deductions. The trap: leaving an employer instantly cancels legal residency, cutting off health insurance and every legal remedy at once.</span></p>
+        <span class="fact"><span class="zh">失聯移工加計後，在台外籍人口逼近百萬</span><span class="en">Counting the missing, the foreign population nears one million</span> · <a href="https://statdb.mol.gov.tw/" target="_blank" rel="noopener"><span class="zh">勞動部統計</span><span class="en">MOL statistics</span></a></span>
+      </div></div>
+      <div class="hard reveal"><div class="no">04</div><div>
+        <h4><span class="zh">遠洋漁工，海上的法律盲區</span><span class="en">Distant-water fishers, a blind spot at sea</span></h4>
+        <p><span class="zh">透過境外聘僱的遠洋漁工，長期在國際水域作業，形成監理與執法的巨大盲點。國際人權組織多次點名台灣遠洋漁船涉及強迫勞動、長期欠薪與安全裝備不足。當一個人在海上漂流數月、甚至無法與家人聯絡，他們的處境幾乎在我們的視線之外。</span><span class="en">Distant-water fishers hired offshore work for months in international waters, creating a vast blind spot for oversight. Human-rights groups have repeatedly flagged Taiwanese vessels for forced labour, withheld wages, and inadequate safety gear. When a person drifts at sea for months, unable even to contact family, their reality lies almost entirely outside our view.</span></p>
+        <span class="fact"><span class="zh">綠色和平《海上強迫勞動》報告曾點名台灣遠洋漁船</span><span class="en">Greenpeace's "Forced Labour at Sea" named Taiwanese vessels</span> · <a href="https://www.tahr.org.tw/term/457" target="_blank" rel="noopener"><span class="zh">台灣人權促進會</span><span class="en">TAHR</span></a></span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-ink" id="about" style="border-top:1px solid var(--line-light)">
+  <div class="wrap">
+    <div class="kicker reveal"><span class="zh">關於</span><span class="en">About</span></div>
+    <div class="about-grid">
+      <div class="about-mark reveal">Victor<span><span class="zh">來自台東</span><span class="en">from Taitung</span></span></div>
+      <div class="about-body reveal">
+        <p><span class="zh">我是 Victor，來自台東。我做這個網站，是因為我漸漸看見一件事：這座島上有將近百萬人，每天在我們身邊工作、生活，卻常常像是隱形的——我們看得到他們的勞動，卻很少真正認識他們是誰。</span><span class="en">I'm Victor, from Taitung. I built this because I slowly came to see something: nearly a million people live and work among us on this island every day, and yet remain almost invisible — we see their labour, but rarely who they are.</span></p>
+        <p><span class="zh">我相信，<strong>接納的前提是理解，而理解的前提是願意看見</strong>。偏見往往不是來自惡意，而是來自陌生——我們對一個群體的節慶、信仰、他們為什麼來、他們正經歷什麼，一無所知。所以我想做的很簡單：把真實的資訊、真實的文化，好好地整理出來，讓陌生變成認識。</span><span class="en">I believe <strong>acceptance begins with understanding, and understanding begins with a willingness to see</strong>. Prejudice usually comes not from malice but from unfamiliarity — knowing nothing of a community's festivals, faith, why they came, or what they are living through. So my aim is simple: to lay out real information and real culture clearly, and turn strangers into neighbours.</span></p>
+        <p><span class="zh">這份指南不談論我身邊任何特定的人，也無意代表任何人發言。它只是一個台東的年輕人，試著把自己查證過的東西誠實地攤開來——如果它能讓哪怕一個人，下次在車站看見那片席地而坐的人群時，心裡多一分理解、少一分評斷，那就值得了。</span><span class="en">This guide speaks of no particular person in my life, and claims to speak for no one. It is simply a young person from Taitung trying to lay out, honestly, what he has verified — and if it leads even one person to feel a little more understanding, and a little less judgment, the next time they pass that crowd seated on the station floor, then it was worth making.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-paper" id="accept">
+  <div class="wrap">
+    <div class="kicker reveal"><span class="zh">如何理解</span><span class="en">What we can do</span></div>
+    <h2 class="sec-title reveal"><span class="zh">接納，從把他們當成「人」開始。</span><span class="en">Acceptance begins with seeing them as people.</span></h2>
+    <p class="body-lg reveal"><span class="zh">理解不需要偉大的行動。它可以只是一個眼神、一句招呼、一次不帶偏見的相遇。以下三件小事，任何一個台灣人都做得到。</span><span class="en">Understanding needs no grand gesture. It can be a glance, a greeting, one meeting without prejudice. Three small things any of us can do.</span></p>
+    <div class="accept-grid">
+      <div class="accept reveal"><div class="n">01 · <span class="zh">看見</span><span class="en">See</span></div>
+        <h4><span class="zh">週日的台北車站，不是「被佔據」</span><span class="en">The station on Sundays isn't "occupied"</span></h4>
+        <p><span class="zh">那是他們一週唯一的休假、唯一能與同鄉相聚的免費公共空間。那不是問題，那是思鄉的人在彼此取暖。</span><span class="en">It is their one day off, their one free public space to be among their own. Not a problem — homesick people keeping each other warm.</span></p></div>
+      <div class="accept reveal"><div class="n">02 · <span class="zh">相遇</span><span class="en">Meet</span></div>
+        <h4><span class="zh">走進一條「印尼街」或「泰國街」</span><span class="en">Walk into an "Indonesia Street"</span></h4>
+        <p><span class="zh">車站周邊的東南亞商店與小吃，是認識彼此最溫柔的起點。嚐一口家鄉味、學一句問候語——理解常常從一頓飯開始。</span><span class="en">The Southeast Asian shops and eateries near the stations are the gentlest starting point. A taste of home, a greeting learned — understanding often begins over a meal.</span></p></div>
+      <div class="accept reveal"><div class="n">03 · <span class="zh">尊重</span><span class="en">Respect</span></div>
+        <h4><span class="zh">對第二代，肯定他們的雙重身分</span><span class="en">Affirm the second generation's dual roots</span></h4>
+        <p><span class="zh">跨國婚姻家庭的孩子，同時擁有兩個文化的根。與其要他們「融入」，不如讓他們驕傲地擁抱兩邊的血脈。</span><span class="en">Children of cross-border families hold two cultures at once. Rather than asking them to "fit in," let them embrace both roots with pride.</span></p></div>
+    </div>
+    <div class="tool-band reveal">
+      <h3><span class="zh">認識，是第一步。<br>行動，可以是下一步。</span><span class="en">Understanding is the first step.<br>Action can be the next.</span></h3>
+      <p><span class="zh">如果你或你認識的移工，正卡在制度的縫隙裡——不知道能不能轉換身分、不知道怎麼向雇主開口——我另外做了一套真正能用的工具，用六種語言，把法律說清楚。</span><span class="en">If you, or a migrant worker you know, are caught in one of these structural gaps — unsure whether status can change, or how to speak to an employer — I've built a set of tools that actually help, explaining the law in six languages.</span></p>
+      <a href="https://formosa-ascent.vercel.app" target="_blank" rel="noopener" class="tool-btn"><span class="zh">前往 Formosa Ascent 工具站 →</span><span class="en">Visit Formosa Ascent →</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="sources" id="sources">
+  <div class="wrap">
+    <h4><span class="zh">資料來源與查證</span><span class="en">Sources &amp; verification</span></h4>
+    <div class="src-grid">
+      <a href="https://statdb.mol.gov.tw/" target="_blank" rel="noopener"><span class="tag">MOL</span><span class="zh">勞動部勞動統計查詢網 — 移工人數與行業分布</span><span class="en">Ministry of Labor statistics — counts by sector</span></a>
+      <a href="https://www.immigration.gov.tw/" target="_blank" rel="noopener"><span class="tag">NIA</span><span class="zh">內政部移民署 — 人口與居留統計</span><span class="en">National Immigration Agency — population &amp; residency</span></a>
+      <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001" target="_blank" rel="noopener"><span class="tag">LAW</span><span class="zh">勞動基準法 — 全國法規資料庫</span><span class="en">Labor Standards Act — law database</span></a>
+      <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0090001" target="_blank" rel="noopener"><span class="tag">LAW</span><span class="zh">就業服務法 — 全國法規資料庫</span><span class="en">Employment Service Act — law database</span></a>
+      <a href="https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=6590&pid=171808" target="_blank" rel="noopener"><span class="tag">LY</span><span class="zh">立法院 — 外籍移工困境問題之研析</span><span class="en">Legislative Yuan — analysis of migrant hardships</span></a>
+      <a href="https://www.tahr.org.tw/term/457" target="_blank" rel="noopener"><span class="tag">NGO</span><span class="zh">台灣人權促進會 — 移工與漁工權益</span><span class="en">Taiwan Association for Human Rights</span></a>
+      <a href="https://join.gov.tw/idea/detail/8ab15f6a-57e6-447c-bd58-c1b06903527d" target="_blank" rel="noopener"><span class="tag">GOV</span><span class="zh">公共政策網路參與平臺 — 仲介費與修法</span><span class="en">Public policy platform — broker fees</span></a>
+      <a href="https://fw.wda.gov.tw/wda-employer/home/mid-foreign-labor" target="_blank" rel="noopener"><span class="tag">WDA</span><span class="zh">勞動部 — 外國技術人力（留才久用）專頁</span><span class="en">MOL — Foreign Skilled Worker programme</span></a>
+    </div>
+    <p class="disclaimer"><span class="zh">本站所引數據均註明來源與時間點：在台合法移工 873,347 人為 2026 年 3 月底數字；四國佔比為 2025 年 8 月底數字，主要引用自勞動部統計查詢網、立法院研析報告與人權組織公開資料。統計數字會隨時間變動，正式引用請以官方最新公告為準。</span><span class="en">All figures here are dated and sourced: 873,347 legal migrant workers is the end-of-March 2026 figure; four-country shares are end-of-August 2025 figures, drawn mainly from the Ministry of Labor portal, Legislative Yuan analysis, and human-rights organisations. Statistics change over time; for formal citation, rely on the latest official figures.</span></p>
+    <div class="foot-btm">
+      <div><span class="brand2">看見他們 · Between Us</span><br><span class="zh">一份關於在台東南亞移工與移民的紀實指南</span><span class="en">A documentary guide to SE Asian migrant workers &amp; immigrants in Taiwan</span></div>
+      <div style="text-align:right"><span class="zh">內容為開放教育用途<br>資料查證日期：2026 年 7 月</span><span class="en">Open educational content<br>Verified: July 2026</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement, btns=document.querySelectorAll('.langtoggle button');
+  function set(l){html.setAttribute('data-lang',l);html.setAttribute('lang',l==='zh'?'zh-Hant':'en');btns.forEach(function(b){b.classList.toggle('on',b.getAttribute('data-set')===l);});try{localStorage.setItem('bu_lang',l);}catch(e){}}
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-set'));});});
+  try{var s=localStorage.getItem('bu_lang');if(s)set(s);}catch(e){}
+})();
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
